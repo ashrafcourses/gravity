@@ -3,7 +3,7 @@ package dal.gravity;
 /**
  * Represents a pendulum
  */
-public class RegularPendulum extends AbstractEarthPendulum {
+public class RegularPendulum extends AbstractPendulum {
     private double delta, iterations = 0;
     private double dissipation;
     private double lastTheta, lastVel, lastAccel;
@@ -26,14 +26,14 @@ public class RegularPendulum extends AbstractEarthPendulum {
         this(inLength, inMass, inTheta0, inDelta, 0);
     }
 
-    public void step() {
+    void step() {
         iterations++;
         lastTheta = lastTheta + lastVel * delta;
         lastVel = lastVel + lastAccel * delta;
         lastAccel = -dissipation * lastVel - this.getGravitationalField() / this.getStringLength() * Math.sin(lastTheta);
     }
 
-    public double getLastTheta() {
+    double getLastTheta() {
         return lastTheta;
     }
 
@@ -52,6 +52,4 @@ public class RegularPendulum extends AbstractEarthPendulum {
     public double getDissipationConstant() {
         return dissipation;
     }
-
-
 }

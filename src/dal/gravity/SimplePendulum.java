@@ -3,7 +3,7 @@ package dal.gravity;
 /**
  * Represents pendulums exhibiting (approximately) simple harmonic motion
  */
-public class SimplePendulum extends AbstractEarthPendulum {
+public class SimplePendulum extends AbstractPendulum {
 
     private double angularFrequency, periodOfMotion;
 
@@ -37,7 +37,7 @@ public class SimplePendulum extends AbstractEarthPendulum {
     /**
      * provides the angular displacement of this Pendulum at time t
      */
-    public double getTheta(double t) {
+    double getTheta(double t) {
         return this.getMaxAngularDisplacement() * Math.cos(angularFrequency * t);
     }
 }
