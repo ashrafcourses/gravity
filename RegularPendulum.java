@@ -1,6 +1,7 @@
 package dal.gravity;
 
 /**
+ * 
  * Represents a pendulum
  */
 public class RegularPendulum extends AbstractEarthPendulum {
@@ -18,7 +19,7 @@ public class RegularPendulum extends AbstractEarthPendulum {
 	dissipation = inDiss;
 	lastVel = 0;
 	lastTheta = this.getMaxAngularDisplacement ();
-	lastAccel = -(this.getGravitationalField () / this.getStringLength ())*Math.sin (lastTheta);
+	lastAccel = -(grav/ this.getStringLength ())*Math.sin (lastTheta);
     }
 
     public RegularPendulum (double inLength, double inMass, double inTheta0, 
@@ -30,7 +31,7 @@ public class RegularPendulum extends AbstractEarthPendulum {
 	iterations++;
 	lastTheta = lastTheta + lastVel*delta;
 	lastVel = lastVel + lastAccel*delta;
-	lastAccel = - dissipation*lastVel - this.getGravitationalField () / this.getStringLength () * Math.sin (lastTheta);
+	lastAccel = - dissipation*lastVel - grav/ this.getStringLength () * Math.sin (lastTheta);
     }
 
     public double getLastTheta () { return lastTheta; }

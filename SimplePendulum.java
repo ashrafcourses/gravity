@@ -1,6 +1,7 @@
 package dal.gravity;
 
 /**
+ * 
  * Represents pendulums exhibiting (approximately) simple harmonic motion
  */
 public class SimplePendulum extends AbstractEarthPendulum {
@@ -15,9 +16,9 @@ public class SimplePendulum extends AbstractEarthPendulum {
      */
     public SimplePendulum (double inLength, double inMass, double inTheta0) {
 	super (inLength, inMass, inTheta0);
-	angularFrequency = Math.sqrt (this.getGravitationalField () / this.getStringLength ());
+	angularFrequency = Math.sqrt (grav/ this.getStringLength ());
 	periodOfMotion = 2 * Math.PI 
-	    * Math.sqrt (this.getStringLength () / this.getGravitationalField ());
+	    * Math.sqrt (this.getStringLength () / grav);
     }
 
     /**
