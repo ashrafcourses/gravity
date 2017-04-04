@@ -7,7 +7,7 @@ import java.text.NumberFormat;
  * versus the Euler algorithm approximation
  */
 public class PendulumRunner {
-
+//run the main
     public static void main (String [] args) {
 	NumberFormat nf = NumberFormat.getInstance ();
 	nf.setMaximumFractionDigits (3);

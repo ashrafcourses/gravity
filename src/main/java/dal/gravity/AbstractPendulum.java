@@ -5,8 +5,10 @@ package dal.gravity;
  */
 public abstract class AbstractPendulum {
 
-
-    /* instance variables - string length, point mass, angular displacement
+//abstract class
+    /** gravitational constant */
+	public static final double GRAVITY = 9.80665;
+	/* instance variables - string length, point mass, angular displacement
      * at t=0, constant for local gravitational field in m/s^2 (e.g., 9.81 on Earth)
      */
     private double stringLength, pointMass;
