@@ -6,7 +6,7 @@ package dal.gravity;
 public class SimplePendulum extends AbstractPendulum {
 
     private double angularFrequency, periodOfMotion;
-
+//simple
     /**
      * Creates a new Pendulum instance using
      * inLength: the string length (>0)
